@@ -2,70 +2,80 @@
 
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href="/static/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="/static/styles.css" rel="stylesheet">
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
-        <link href="" rel="icon">
+    <link href="" rel="icon">
 
-        <title>Race Relations in Singapore: {% block title %}{% endblock %}</title>
+    <title>Race Relations in Singapore: {% block title %}{% endblock %}</title>
 
-    </head>
+</head>
 
-    <body class="bg-light text-dark p-4">
+<body class="bg-light text-dark p-3">
 
-        <nav class="navbar bg-light navbar-expand-md navbar-light">
+    <nav class="navbar bg-light navbar-expand-lg navbar-light">
 
-            <a class="navbar-brand" href="/">Race Relations in Singapore</a>
+        <a class="navbar-brand" href="/">Race Relations in Singapore</a>
 
-            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbar" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbar">
 
-                    <ul class="navbar-nav mr-auto mt-2 pl-2">
+            <ul class="navbar-nav mr-auto mt-2">
 
-                        <li class="nav-item"><a class="nav-link" href="/articles">Articles</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/videos">Videos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/podcasts">Podcasts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/websites">Websites</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/social">Social Media</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/others">Others</a></li>
+                <li class="nav-item"><a class="nav-link" href="/articles">Articles</a></li>
+                <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="/videos">Videos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/podcasts">Podcasts</a></li>
+                <li class="nav-item"><a class="nav-link" href="/websites">Websites</a></li>
+                <li class="nav-item"><a class="nav-link" href="/social">Social Media</a></li>
+                <li class="nav-item"><a class="nav-link" href="/others">Others</a></li>
 
-                    </ul>
+            </ul>
 
-                    <ul class="navbar-nav ml-auto mt-2">
+            <ul class="navbar-nav ml-auto mt-2">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://docs.google.com/spreadsheets/u/1/d/1VsoJpvVbRQjboAiCWU4gxO1TNzMTj0VFJ2I52BHlG1k/htmlview#">A Resource Bank by Adila</a>
-                        </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="https://docs.google.com/spreadsheets/u/1/d/1VsoJpvVbRQjboAiCWU4gxO1TNzMTj0VFJ2I52BHlG1k/htmlview#">A
+                        Resource Bank by Adila</a>
+                </li>
 
-                    </ul>
-            </div>
+            </ul>
+        </div>
 
-        </nav>
+    </nav>
 
-        <main class="container-md p-5">
+    <main class="container-lg p-5">
 
-            {% block main %}
-            {% endblock %}
+        {% block main %}
+        {% endblock %}
 
-        </main>
+    </main>
 
-        <footer class="small text-center text-muted">
-            Created by <a class="text-info" href="">Shem Maleriado</a>
-        </footer>
+    <footer class="small text-center text-muted">
+        Created by <a class="text-info" href="">Shem Maleriado</a>
+    </footer>
 
-    </body>
+</body>
 
 </html>
