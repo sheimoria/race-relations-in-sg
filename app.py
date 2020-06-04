@@ -31,32 +31,32 @@ def index():
 @app.route("/articles")
 def articles():
     values = lookup('Articles')
-    return render_template("resources.html", values=values)
+    return render_template("resources.html", values=reversed(values))
 
 @app.route("/books")
 def books():
     values = lookup('Books')
-    return render_template("resources.html", values=values)
+    return render_template("resources.html", values=reversed(values))
 
 @app.route("/videos")
 def videos():
     values = lookup('Videos')
-    return render_template("resources.html", values=values)
+    return render_template("resources.html", values=reversed(values))
 
 @app.route("/podcasts")
 def podcasts():
     values = lookup('Podcasts')
-    return render_template("resources.html", values=values)
+    return render_template("resources.html", values=reversed(values))
 
 @app.route("/websites")
 def websites():
     values = lookup('Websites')
-    return render_template("resources.html", values=values)
+    return render_template("resources.html", values=reversed(values))
 
 @app.route("/social")
 def social():
     values = lookup('Social Media')
-    return render_template("resources.html", values=values)
+    return render_template("resources.html", values=reversed(values))
 
 @app.route("/others")
 def others():
