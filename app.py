@@ -37,41 +37,41 @@ def index():
 
 @app.route("/articles")
 def articles():
-    values = reversed(results[0]['values'])
+    values = results[0]['values']
     return render_template("resources.html", values=values, sheet='Articles')
 
 
 @app.route("/books")
 def books():
-    values = reversed(results[1]['values'])
+    values = results[1]['values']
     return render_template("resources.html", values=values, sheet='Books')
 
 
 @app.route("/videos")
 def videos():
-    values = reversed(results[2]['values'])
+    values = results[2]['values']
     return render_template("resources.html", values=values, sheet='Videos')
 
 
 @app.route("/podcasts")
 def podcasts():
-    values = reversed(results[3]['values'])
+    values = results[3]['values']
     return render_template("resources.html", values=values, sheet='Podcasts')
 
 
 @app.route("/websites")
 def websites():
-    values = reversed(results[4]['values'])
+    values = results[4]['values']
     return render_template("resources.html", values=values, sheet='Websites')
 
 
 @app.route("/social")
 def social():
-    values = reversed(results[5]['values'])
+    values = results[5]['values']
     return render_template("resources2.html", values=values, sheet='Social Media', http='http')
 
 
 @app.route("/others")
 def others():
-    values = reversed(results[6]['values'])
+    values = results[6]['values']
     return render_template("resources.html", values=values, sheet='Others')
