@@ -1,84 +1,67 @@
 <!DOCTYPE html>
-
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="/static/styles.css" rel="stylesheet">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="/static/styles.css" rel="stylesheet">
+        <link href="" rel="icon">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        <title>Race Relations in Singapore: {% block title %}{% endblock %}</title>
+    </head>
 
-    <link href="" rel="icon">
+    <body class="bg-light text-dark">
+        <nav class="navbar bg-light navbar-expand-lg navbar-light">
+            <div class="container p-2">
+                <h6 class="mt-3 mr-3"><a class="text-dark" href="/">Race Relations in Singapore</a></h6>
 
-    <title>Race Relations in Singapore: {% block title %}{% endblock %}</title>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                    data-target="#navbar" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-</head>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/articles">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/videos">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/podcasts">Podcasts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/websites">Websites</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/social">Social Media</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/others">Others</a></li>
+                    </ul>
 
-<body class="bg-light text-dark">
-
-    <nav class="navbar bg-light navbar-expand-lg navbar-light">
-
-        <div class="container p-2">
-
-            <h6 class="mt-3 mr-3"><a class="text-dark" href="/">Race Relations in Singapore</a></h6>
-
-            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-target="#navbar" data-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbar">
-
-                <ul class="navbar-nav mr-auto mt-2">
-
-                    <li class="nav-item"><a class="nav-link" href="/articles">Articles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/videos">Videos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/podcasts">Podcasts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/websites">Websites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/social">Social Media</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/others">Others</a></li>
-
-                </ul>
-
-                <ul class="navbar-nav ml-auto mt-2">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://docs.google.com/spreadsheets/u/1/d/1VsoJpvVbRQjboAiCWU4gxO1TNzMTj0VFJ2I52BHlG1k/htmlview#">A Resource Bank by Adila</a>
-                    </li>
-
-                </ul>
-
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://docs.google.com/spreadsheets/u/1/d/1VsoJpvVbRQjboAiCWU4gxO1TNzMTj0VFJ2I52BHlG1k/htmlview#">A
+                                Resource Bank by Adila</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
 
-        </div>
+        <main class="container p-4">
+            {% block main %}
+            {% endblock %}
+        </main>
 
-    </nav>
-
-    <main class="container p-4">
-
-        {% block main %}
-        {% endblock %}
-
-    </main>
-
-    <footer class="small text-center text-muted">
-        Website by <a class="text-info" href="https://www.instagram.com/sheimoria/?hl=en">Shem Maleriado</a>
-    </footer>
-
-</body>
-
+        <footer class="small text-center text-muted p-4">
+            Website by <a class="text-info" href="https://www.instagram.com/sheimoria/?hl=en">Shem Maleriado</a>
+        </footer>
+    </body>
 </html>
