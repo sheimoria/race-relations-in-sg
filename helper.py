@@ -4,14 +4,19 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import pprint
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
-def lookup(c):
+def lookup():
     # The ID and range of a sample spreadsheet.
     SAMPLE_SPREADSHEET_ID = '1VsoJpvVbRQjboAiCWU4gxO1TNzMTj0VFJ2I52BHlG1k'
-    SAMPLE_RANGE_NAME = c +'!A2:E'
+    SAMPLE_RANGE_NAME = []
+    SHEETS = ['Articles', 'Books', 'Videos', 'Podcasts',
+              'Websites', 'Social Media', 'Others']
+    for SHEET in SHEETS:
+        SAMPLE_RANGE_NAME.append(SHEET + '!A2:E')
 
     """Shows basic usage of the Sheets API.
     Prints values from a sample spreadsheet.
@@ -39,7 +44,7 @@ def lookup(c):
 
     # Call the Sheets API
     sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
-                                range=SAMPLE_RANGE_NAME).execute()
-    values = result.get('values', [])
-    return values
+    result = sheet.values().batchGet(spreadsheetId=SAMPLE_SPREADSHEET_ID,
+                                     ranges=SAMPLE_RANGE_NAME).execute()
+    return result
+

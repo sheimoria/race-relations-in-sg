@@ -11,6 +11,8 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Ensure responses aren't cached
+
+
 @app.after_request
 def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
@@ -18,47 +20,58 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
-# Index
+# Retrieve spreadsheet values
+results = lookup()['valueRanges']
+
+
 @app.route("/")
-def index(): 
+def index():
     return render_template("index.html")
+
 
 @app.route("/articles")
 def articles():
-    values = lookup('Articles')
-    return render_template("resources.html", values=reversed(values))
+    values = reversed(results[0]['values'])
+    return render_template("resources.html", values=values, sheet='Articles')
+
 
 @app.route("/books")
 def books():
-    values = lookup('Books')
-    return render_template("resources.html", values=reversed(values))
+    values = reversed(results[1]['values'])
+    return render_template("resources.html", values=values, sheet='Books')
+
 
 @app.route("/videos")
 def videos():
-    values = lookup('Videos')
-    return render_template("resources.html", values=reversed(values))
+    values = reversed(results[2]['values'])
+    return render_template("resources.html", values=values, sheet='Videos')
+
 
 @app.route("/podcasts")
 def podcasts():
-    values = lookup('Podcasts')
-    return render_template("resources.html", values=reversed(values))
+    values = reversed(results[3]['values'])
+    return render_template("resources.html", values=values, sheet='Podcasts')
+
 
 @app.route("/websites")
 def websites():
-    values = lookup('Websites')
-    return render_template("resources.html", values=reversed(values))
+    values = reversed(results[4]['values'])
+    return render_template("resources.html", values=values, sheet='Websites')
+
 
 @app.route("/social")
 def social():
-    values = lookup('Social Media')
-    return render_template("resources.html", values=reversed(values))
+    values = reversed(results[5]['values'])
+    return render_template("resources2.html", values=values, sheet='Social Media', http='http')
+
 
 @app.route("/others")
 def others():
-    values = lookup('Others')
-    return render_template("resources.html", values=values)
+    values = reversed(results[6]['values'])
+    return render_template("resources.html", values=values, sheet='Others')
