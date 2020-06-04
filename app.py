@@ -48,6 +48,11 @@ def podcasts():
     values = lookup('Podcasts')
     return render_template("resources.html", values=values)
 
+@app.route("/websites")
+def websites():
+    values = lookup('Websites')
+    return render_template("resources.html", values=values)
+
 @app.route("/social")
 def social():
     values = lookup('Social Media')
