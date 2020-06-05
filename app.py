@@ -68,7 +68,7 @@ def websites():
 @app.route("/social")
 def social():
     values = results[5]['values']
-    return render_template("resources2.html", values=values, sheet='Social Media', http='http')
+    return render_template("resources.html", values=values, sheet='Social Media', http='http')
 
 
 @app.route("/others")
