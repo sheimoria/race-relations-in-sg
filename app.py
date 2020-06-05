@@ -38,31 +38,31 @@ def index():
 @app.route("/articles")
 def articles():
     values = results[0]['values']
-    return render_template("resources.html", values=values, sheet='Articles')
+    return render_template("resources.html", values=values, sheet='Articles', http='http')
 
 
 @app.route("/books")
 def books():
     values = results[1]['values']
-    return render_template("resources.html", values=values, sheet='Books')
+    return render_template("resources.html", values=values, sheet='Books', http='http')
 
 
 @app.route("/videos")
 def videos():
     values = results[2]['values']
-    return render_template("resources.html", values=values, sheet='Videos')
+    return render_template("resources.html", values=values, sheet='Videos', http='http')
 
 
 @app.route("/podcasts")
 def podcasts():
     values = results[3]['values']
-    return render_template("resources.html", values=values, sheet='Podcasts')
+    return render_template("resources.html", values=values, sheet='Podcasts', http='http')
 
 
 @app.route("/websites")
 def websites():
     values = results[4]['values']
-    return render_template("resources.html", values=values, sheet='Websites')
+    return render_template("resources.html", values=values, sheet='Websites', http='http')
 
 
 @app.route("/social")
@@ -74,4 +74,4 @@ def social():
 @app.route("/others")
 def others():
     values = results[6]['values']
-    return render_template("resources.html", values=values, sheet='Others')
+    return render_template("resources.html", values=values, sheet='Others', http='http')
