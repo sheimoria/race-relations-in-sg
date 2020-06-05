@@ -10,8 +10,8 @@
         {% for row in values %}
         <h6 class="text-left pb-2"><a class="text-info" {% if http not in row[4] %} href="http://{{ row[4] }}" {% else %}
                 href="{{ row[4] }}" {% endif %}>{{ row[2] }}</a></h6>
-        <p class="text-left pb-5 mb-5">{{ row[3] }}</p>
-        <p class="border-bottom text-black-50"></p>
+        <p class="text-left mb-5">{{ row[3] }}</p>
+        <p class="border-bottom text-black-50 mb-5"></p>
         {% endfor %}
     </div>
 </div>
