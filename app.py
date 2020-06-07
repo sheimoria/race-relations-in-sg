@@ -39,11 +39,13 @@ def index():
 @app.route("/search", methods=['POST'])
 def search():
     results = []
-    for i in range(len(sheets)):
-        for j in range(len(sheets[i]['values'])):
-            for k in range(len(sheets[i]['values'][j])):
-                if request.form.get('search') in sheets[i]['values'][j][k]:
-                    results.append(sheets[i]['values'][j])
+    search = request.form.get('search').split()
+    for word in search:
+        for i in range(len(sheets)):
+            for j in range(len(sheets[i]['values'])):
+                for k in range(len(sheets[i]['values'][j])):
+                        if word in sheets[i]['values'][j][k] and sheets[i]['values'][j] not in results:
+                            results.append(sheets[i]['values'][j])
     return render_template("resources.html", values=results, sheet='Results', http='http')
 
 
