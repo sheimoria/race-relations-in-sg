@@ -44,15 +44,9 @@ def search():
         for i in range(len(sheets)):
             for j in range(len(sheets[i]['values'])):
                 for k in range(len(sheets[i]['values'][j])):
-<<<<<<< HEAD
-                    if word in sheets[i]['values'][j][k] and sheets[i]['values'][j] not in results:
-                        results.append(sheets[i]['values'][j])
-    return render_template("results.html", values=results, sheet='Results', http='http')
-=======
                         if word in sheets[i]['values'][j][k].lower() and sheets[i]['values'][j] not in results:
                             results.append(sheets[i]['values'][j])
-    return render_template("resources.html", values=results, sheet='Results', http='http')
->>>>>>> c180ff3d526e1df702983cb61e2949bab7c73960
+    return render_template("results.html", values=results, sheet='Results', http='http')
 
 
 @app.route("/articles")
