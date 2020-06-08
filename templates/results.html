@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ sheet }}
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg">
+        {% for row in values %}
+        <p><span class="badge badge-info">{{ row[1] }}</span></p>
+        <h6 class="text-left pb-2"><a class="text-info" {% if http not in row[4] %} href="http://{{ row[4] }}" {% else %}
+                href="{{ row[4] }}" {% endif %}>{{ row[2] }}</a></h6>
+        <p class="text-left mb-4">{{ row[3] }}</p>
+        <p class="border-bottom text-black-50 mb-4"></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
