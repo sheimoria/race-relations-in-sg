@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ sheet }}
+{% endblock %}
+
+{% block main %}
+
+<!-- Name(platform), URL and url-len for various social media platforms.
+    Allows for extension of the page if more social media links are added.-->
+{%- set ig = {
+    'platform':'Instagram',
+    'url-len':13,
+    'url':'instagram.com/'
+    } -%}
+{%- set fb = {
+    'platform':'Facebook',
+    'url-len':12,
+    'url':'facebook.com/'
+    } -%}
+{%- set yt = {
+    'platform':'YouTube',
+    'url-len':11,
+    'url':'youtube.com/'
+    } -%}
+{%  set platforms = [ig,fb,yt] %}
+
+<div class="row">
+    <div class="col-lg">
+        {% for row in values %}
+        <h6 class="text-left pb-2">
+            {{ row [2] }} <!-- Name of resource/influencer -->
+
+            {% set links = row[4].split('\n') %} <!-- Split links by new line-->
+
+            {% for link in links %}
+                <!-- If it's a website & not social media -->
+                {% if (http in link) and (platforms[0]['url'] not in link) and (platforms[1]['url'] not in link) and (platforms[2]['url'] not in link) %}
+                    &#8208 <!-- Hyphen -->
+                    <a class = "text-info" href={{ link }}> Website</a>
+
+                <!-- Check if it's a social media link -->
+                {% else %}
+                    {% for p in platforms if p['url'] in link %}
+                        &#8208 <!-- Hyphen -->
+                        {% set username = link[ link.find(p['url']) + p['url-len'] + 1 : ] %}
+                        <a class="text-info" href="http://{{ p['url'] }}{{ username }}">{{ p['platform'] }}</a>
+                    {% endfor %}
+
+                {% endif %}
+            {% endfor %}
+
+        </h6>
+        <p class="text-left mb-4">{{ row[3] }}</p>
+        <p class="border-bottom text-black-50 mb-4"></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
