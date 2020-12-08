@@ -48,3 +48,5 @@ def lookup():
                                      ranges=SAMPLE_RANGE_NAME).execute()
     return result
 
+if __name__ == '__main__':
+    lookup()
